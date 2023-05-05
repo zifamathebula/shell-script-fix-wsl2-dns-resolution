@@ -2,7 +2,7 @@
 
 <!-- markdownlint-disable MD013 -->
 [![Shellcheck](https://github.com/zifamathebula/shell-script-fix-wsl2-dns-resolution/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/zifamathebula/shell-script-fix-wsl2-dns-resolution/actions/workflows/shellcheck.yml)
-
+[![Markdown Lint](https://github.com/zifamathebula/shell-script-fix-wsl2-dns-resolution/actions/workflows/markdownlint.yml/badge.svg)](https://github.com/zifamathebula/shell-script-fix-wsl2-dns-resolution/actions/workflows/markdownlint.yml)
 This script is designed to fix DNS resolution issues in WSL2 when using the Cisco AnyConnect VPN client in a full tunnel setup. The issue arises because the automatic DNS configuration in WSL2 does not work properly when using the VPN. This prevents WSL2 from resolving addresses while the VPN connection is active.
 
 ## The Issue
