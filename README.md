@@ -9,7 +9,7 @@ This script is designed to fix DNS resolution issues in WSL2 when using the Cisc
 
 When the Cisco AnyConnect VPN client is in a full tunnel setup, it sends all traffic over the VPN, including DNS requests. However, WSL2's automatic DNS configuration relies on the DNS servers configured in the Windows host. This configuration is not updated to match the DNS servers used by the VPN connection, causing DNS resolution to fail in WSL2.
 
-The original Github issue describing the problem in detail can be found at the following link: https://github.com/microsoft/WSL/issues/1350#issuecomment-844452775
+The original Github issue describing the problem in detail can be found at the following link: [Issue Link](https://github.com/microsoft/WSL/issues/1350#issuecomment-844452775)
 
 ## The Solution
 
@@ -22,7 +22,7 @@ The script takes the following approach to resolve this issue:
 
 By updating the `resolv.conf` file in WSL2 with the correct DNS server addresses, the script ensures that DNS resolution works properly while the VPN connection is active.
 
-For more information on the solution, please refer to the following blog post: https://www.frakkingsweet.com/automatic-dns-configuration-with-wsl-and-anyconnect-client/
+For more information on the solution, please refer to the following blog post: [Blog Post Link](https://www.frakkingsweet.com/automatic-dns-configuration-with-wsl-and-anyconnect-client/)
 
 ## How to use
 
