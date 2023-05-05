@@ -1,9 +1,28 @@
-# WSL2 DNS Update Script for Cisco AnyConnect VPN
+# Wsl2 DNS Update Script for Cisco AnyConnect VPN
 
 <!-- markdownlint-disable MD013 -->
 [![Shellcheck](https://github.com/zifamathebula/fix-wsl2-dns-resolution/workflows/Shellcheck/badge.svg?event=push)](https://github.com/zifamathebula/fix-wsl2-dns-resolution/actions?query=Shellcheck)
 
-This script is designed to fix DNS resolution issues in WSL2 when using the Cisco AnyConnect VPN client in a full tunnel setup. It retrieves the DNS server entries from the local system and updates the `resolv.conf` file in WSL2. The script can be configured to run automatically on login/startup of the WSL2 instance.
+This script is designed to fix DNS resolution issues in WSL2 when using the Cisco AnyConnect VPN client in a full tunnel setup. The issue arises because the automatic DNS configuration in WSL2 does not work properly when using the VPN. This prevents WSL2 from resolving addresses while the VPN connection is active.
+
+## The Issue
+
+When the Cisco AnyConnect VPN client is in a full tunnel setup, it sends all traffic over the VPN, including DNS requests. However, WSL2's automatic DNS configuration relies on the DNS servers configured in the Windows host. This configuration is not updated to match the DNS servers used by the VPN connection, causing DNS resolution to fail in WSL2.
+
+The original Github issue describing the problem in detail can be found at the following link: https://github.com/microsoft/WSL/issues/1350#issuecomment-844452775
+
+## The Solution
+
+The script takes the following approach to resolve this issue:
+
+1. It uses PowerShell commands to retrieve the current DNS server addresses from the local Windows system. This includes DNS servers from both the Cisco AnyConnect VPN adapter and other network adapters on the system.
+2. The retrieved DNS server addresses are used to generate a new `resolv.conf` file in the specified WSL home directory. This file is used by WSL2 for DNS resolution.
+3. The existing `resolv.conf` file in WSL2 is replaced with the newly generated one, allowing WSL2 to use the correct DNS servers.
+4. Optionally, the script can be configured to run automatically on login/startup of the WSL2 instance. This ensures that the DNS configuration remains up-to-date as the VPN connects and disconnects.
+
+By updating the `resolv.conf` file in WSL2 with the correct DNS server addresses, the script ensures that DNS resolution works properly while the VPN connection is active.
+
+For more information on the solution, please refer to the following blog post: https://www.frakkingsweet.com/automatic-dns-configuration-with-wsl-and-anyconnect-client/
 
 ## How to use
 
