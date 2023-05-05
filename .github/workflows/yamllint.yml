@@ -1,0 +1,25 @@
+name: YAML Lint
+
+on:
+  push:
+    paths:
+      - '**.yml'
+      - '**.yaml'
+  pull_request:
+    paths:
+      - '**.yml'
+      - '**.yaml'
+
+jobs:
+  yamllint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up yamllint
+        run: sudo apt-get install yamllint
+
+      - name: Run yamllint
+        run: yamllint .
