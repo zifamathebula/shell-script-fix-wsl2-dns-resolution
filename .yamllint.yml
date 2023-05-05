@@ -2,6 +2,5 @@ extends: default  # Extend the default ruleset
 rules:  # Define custom rules
   line-length:  # Configure the line length rule
     max: 120  # Set the maximum line length to 120 characters
-    allow-uri: true  # Allow URIs to exceed the maximum line length
     ignore:  # Ignore specific lines or patterns
       - "^.*:$"  # Ignore lines that end with a colon (":")
