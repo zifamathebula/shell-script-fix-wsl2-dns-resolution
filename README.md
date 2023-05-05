@@ -49,4 +49,4 @@ Contributions are welcome! Please feel free to submit issues or pull requests to
 If you find this script useful and would like to show your appreciation, you can buy me a coffee:
 
 [![Buy Me a Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/zifamathebula)
-<!-- markdownlint-enable MD013 --> 
+<!-- markdownlint-enable MD013 -->
