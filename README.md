@@ -2,8 +2,7 @@
 
 <!-- markdownlint-disable MD013 -->
 [![Shellcheck](https://github.com/zifamathebula/fix-wsl2-dns-resolution/workflows/Shellcheck/badge.svg?event=push)](https://github.com/zifamathebula/fix-wsl2-dns-resolution/actions?query=Shellcheck)
-<!-- markdownlint-enable MD013 -->
-    
+<!-- markdownlint-enable MD013 --> 
 This script is designed to fix DNS resolution issues in WSL2 when using the Cisco AnyConnect VPN client in a full tunnel setup. It retrieves the DNS server entries from the local system and updates the `resolv.conf` file in WSL2. The script can be configured to run automatically on login/startup of the WSL2 instance.
 
 ## How to use
